@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Digital — Biến Website Thành Cỗ Máy Bán Hàng</title>
+  <meta name="description" content="Hệ sinh thái NOVA Digital: thiết kế website chuẩn SEO, hosting, tên miền, quảng cáo, Google Maps, phần mềm và AI — giúp doanh nghiệp Việt chuyển đổi nhanh trong kỷ nguyên số.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NOVA Digital — Biến Website Thành Cỗ Máy Bán Hàng">
+  <meta property="og:description" content="16 sản phẩm & dịch vụ từ thiết kế website TOP Google đến marketing, phần mềm và AI.">
+  <meta property="og:image" content="https://placehold.co/1200x630/FFD43B/111111?text=NOVA+Digital">
+  <meta property="og:type" content="website">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#FFFBEA', 100: '#FFF3C4', 200: '#FFE98A', 300: '#FFDD55', 400: '#FFD43B', 500: '#F5C000', 600: '#C99A00' },
+            ink: '#111111'
+          },
+          fontFamily: { sans: ['"Be Vietnam Pro"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "Be Vietnam Pro", sans-serif; background: #fff; color: #111; overflow-x: hidden; }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+
+    /* Hero glow */
+    .glow { background: radial-gradient(closest-side, rgba(255,212,59,.45), rgba(255,212,59,0)); filter: blur(10px); }
+
+    /* Orbit animation */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinRev { to { transform: rotate(-360deg); } }
+    .orbit { animation: spin 28s linear infinite; }
+    .orbit > .planet { animation: spinRev 28s linear infinite; }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .floaty { animation: floaty 4s ease-in-out infinite; }
+
+    /* Rotating word */
+    .word-rotator { display: inline-grid; }
+    .word-rotator span { grid-area: 1/1; opacity: 0; transform: translateY(60%); transition: all .5s ease; }
+    .word-rotator span.active { opacity: 1; transform: none; }
+
+    /* Marquee */
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @keyframes marqueeY { to { transform: translateY(-50%); } }
+    .marquee { animation: marquee 40s linear infinite; }
+    .marquee-y { animation: marqueeY 30s linear infinite; }
+    .marquee-y.slow { animation-duration: 42s; }
+    .pause-hover:hover .marquee, .pause-hover:hover .marquee-y { animation-play-state: paused; }
+
+    /* Service card hover */
+    .svc { transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
+    .svc:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -20px rgba(201,154,0,.45); }
+    .svc:hover .svc-icon { background: #111; color: #FFD43B; }
+
+    /* Highlight underline */
+    .hl { background: linear-gradient(transparent 60%, #FFE98A 60%); }
+
+    /* Fade mask for vertical marquee */
+    .mask-y { -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent); }
+    .mask-x { -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .orbit, .orbit > .planet, .floaty, .marquee, .marquee-y { animation: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+      <span class="w-9 h-9 rounded-full bg-brand-400 grid place-items-center text-ink font-black">N</span>
+      NOVA<span class="text-brand-600">digital</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+      <a href="#dich-vu" class="hover:text-brand-600">Dịch vụ</a>
+      <a href="#khach-hang" class="hover:text-brand-600">Khách hàng</a>
+      <a href="#so-lieu" class="hover:text-brand-600">Số liệu</a>
+      <a href="#kien-thuc" class="hover:text-brand-600">Kiến thức</a>
+      <a href="#ve-chung-toi" class="hover:text-brand-600">Về chúng tôi</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <button class="hidden sm:flex items-center gap-1 text-sm font-semibold px-2 py-1 rounded-lg hover:bg-black/5">🇻🇳 VI</button>
+      <a href="tel:0900000000" class="bg-brand-400 hover:bg-brand-500 text-ink font-bold text-xs sm:text-sm whitespace-nowrap px-3 sm:px-4 py-2.5 rounded-full shadow-[0_6px_20px_-6px_rgba(245,192,0,.8)] transition">0900 000 000</a>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-black/5" aria-label="Mở menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-black/5 shadow-xl">
+    <nav class="flex flex-col p-4 text-base font-semibold">
+      <a href="#dich-vu" class="py-3 border-b border-black/5">Dịch vụ</a>
+      <a href="#khach-hang" class="py-3 border-b border-black/5">Khách hàng</a>
+      <a href="#so-lieu" class="py-3 border-b border-black/5">Số liệu</a>
+      <a href="#kien-thuc" class="py-3 border-b border-black/5">Kiến thức</a>
+      <a href="#ve-chung-toi" class="py-3">Về chúng tôi</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="relative pt-28 md:pt-36 pb-20 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+  <div class="glow absolute -top-40 -right-40 w-[640px] h-[640px] pointer-events-none"></div>
+  <div class="glow absolute top-60 -left-60 w-[520px] h-[520px] pointer-events-none opacity-60"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <p class="text-gray-500 font-medium mb-4">Ai cũng có thể tạo một website trong vài ngày...</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+        Nhưng một website <span class="text-brand-500">“tạo ra khách hàng”</span> thì phải được xây dựng đúng cách
+      </h1>
+      <p class="mt-6 text-gray-600 text-base md:text-lg leading-relaxed max-w-xl">
+        Hệ sinh thái NOVA cung cấp <b class="text-ink">16 sản phẩm và dịch vụ</b> — từ thiết kế website TOP Google đến marketing, phần mềm quản lý nội bộ và tích hợp AI, giúp doanh nghiệp chuyển đổi nhanh trong kỷ nguyên số.
+      </p>
+
+      <!-- Domain lookup -->
+      <form id="domainForm" class="mt-8 max-w-xl bg-white rounded-full p-1.5 pl-5 flex items-center shadow-[0_10px_40px_-12px_rgba(0,0,0,.18)] border border-black/5">
+        <svg class="shrink-0 text-gray-400" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="7"/><path d="M14 14l4 4" stroke-linecap="round"/></svg>
+        <input id="domainInput" type="text" placeholder="Nhập tên miền cần tra cứu" class="flex-1 min-w-0 bg-transparent px-3 py-3 outline-none text-base" />
+        <button class="bg-ink text-white font-semibold px-5 sm:px-7 py-3 rounded-full hover:bg-black/80 transition">Tra cứu</button>
+      </form>
+      <p id="domainResult" class="mt-3 ml-5 text-sm min-h-[20px]"></p>
+
+      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">✅ Chuẩn SEO từ gốc</span>
+        <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">⚡ Tải dưới 2 giây</span>
+        <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">🤖 Tích hợp AI</span>
+      </div>
+    </div>
+
+    <!-- Orbit visual -->
+    <div class="reveal relative mx-auto w-[300px] h-[300px] sm:w-[420px] sm:h-[420px]">
+      <div class="absolute inset-0 rounded-full border-2 border-dashed border-brand-300/70"></div>
+      <div class="absolute inset-12 sm:inset-16 rounded-full border border-brand-300/60"></div>
+      <div class="absolute inset-0 grid place-items-center">
+        <div class="floaty w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-brand-300 to-brand-500 grid place-items-center shadow-[0_20px_60px_-10px_rgba(245,192,0,.8)] ring-8 ring-white">
+          <span class="text-5xl sm:text-6xl font-black text-ink">N</span>
+        </div>
+      </div>
+      <div class="orbit absolute inset-0">
+        <div class="planet absolute -top-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-lg px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap">🌐 Website</div>
+        <div class="planet absolute top-1/2 -right-6 -translate-y-1/2 bg-white rounded-2xl shadow-lg px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap">📈 SEO</div>
+        <div class="planet absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-lg px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap">🎯 Quảng cáo</div>
+        <div class="planet absolute top-1/2 -left-6 -translate-y-1/2 bg-white rounded-2xl shadow-lg px-3 py-2 text-xs sm:text-sm font-semibold whitespace-nowrap">🤖 AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATEMENT ============ -->
+<section class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
+    <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-[1.2] tracking-tight">
+      Chúng tôi xây website như
+      <span class="inline-block bg-ink text-brand-400 px-4 py-1 rounded-2xl -rotate-1">một hệ thống</span><br class="hidden sm:block">
+      <span class="word-rotator text-brand-500" id="rotator">
+        <span class="active">đủ nền tảng</span>
+        <span>đủ traffic</span>
+        <span>đủ niềm tin</span>
+      </span>
+      để chuyển đổi
+    </h2>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="dich-vu" class="py-16 md:py-24 bg-gradient-to-b from-white via-brand-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <p class="text-brand-600 font-bold uppercase tracking-widest text-sm">Website chỉ là điểm bắt đầu</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Mọi thứ cần 1 hệ thống marketing chuyển đổi mọi lúc mọi nơi</h2>
+      <p class="mt-4 text-gray-600">Bắt đầu từ một dịch vụ, hoặc để chúng tôi lo trọn hệ thống.</p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- Featured: Website -->
+      <article class="svc reveal sm:col-span-2 lg:row-span-2 bg-white rounded-3xl p-7 border border-black/5 flex flex-col">
+        <div class="svc-icon w-12 h-12 rounded-2xl bg-brand-100 grid place-items-center text-2xl transition">🖥️</div>
+        <h3 class="mt-5 text-2xl font-bold">Thiết kế website</h3>
+        <p class="mt-2 text-gray-600 max-w-md">Website chuẩn thương hiệu — khách vào là muốn ở lại, và mua. Mỗi ngành một cách bố trí riêng, không dùng chung một mẫu.</p>
+        <a href="#lien-he" class="mt-5 self-start bg-brand-400 hover:bg-brand-500 font-semibold text-sm px-5 py-2.5 rounded-full transition">Xem chi tiết →</a>
+        <!-- Browser mockup -->
+        <div class="mt-7 flex-1 min-h-[180px] rounded-2xl bg-gray-900 p-2 shadow-inner">
+          <div class="flex items-center gap-1.5 px-2 pb-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+            <span class="ml-3 text-[11px] text-gray-400 bg-gray-800 rounded px-2 py-0.5">yourbrand.vn</span>
+          </div>
+          <div class="rounded-xl bg-gradient-to-br from-brand-100 to-white h-[calc(100%-28px)] p-4 grid grid-cols-3 gap-3">
+            <div class="col-span-2 space-y-2">
+              <div class="h-3 w-3/4 bg-ink/80 rounded"></div>
+              <div class="h-3 w-1/2 bg-ink/40 rounded"></div>
+              <div class="h-2 w-full bg-ink/10 rounded mt-3"></div>
+              <div class="h-2 w-5/6 bg-ink/10 rounded"></div>
+              <div class="h-7 w-24 bg-brand-400 rounded-full mt-3"></div>
+            </div>
+            <div class="rounded-xl bg-brand-300/70"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">✉️</div>
+        <h3 class="mt-4 text-lg font-bold">Email doanh nghiệp</h3>
+        <p class="mt-2 text-sm text-gray-600">Email theo tên miền riêng, tăng uy tín thương hiệu và giao tiếp chuyên nghiệp với khách hàng.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">📘</div>
+        <h3 class="mt-4 text-lg font-bold">Thiết kế profile</h3>
+        <p class="mt-2 text-sm text-gray-600">Hồ sơ năng lực chuyên nghiệp, tạo ấn tượng mạnh với đối tác và khách hàng.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">📍</div>
+        <h3 class="mt-4 text-lg font-bold">Google Maps</h3>
+        <p class="mt-2 text-sm text-gray-600">Đưa doanh nghiệp lên bản đồ — khách dễ tìm, dễ chỉ đường, tăng độ tin cậy.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">👍</div>
+        <h3 class="mt-4 text-lg font-bold">Fanpage</h3>
+        <p class="mt-2 text-sm text-gray-600">Xây dựng và phát triển Fanpage, duy trì tương tác và gia tăng khách tiềm năng.</p>
+      </article>
+
+      <!-- Hosting (dark) -->
+      <article class="svc reveal sm:col-span-2 bg-ink text-white rounded-3xl p-7 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-56 h-56 rounded-full bg-brand-400/20 blur-2xl"></div>
+        <div class="relative">
+          <div class="w-11 h-11 rounded-2xl bg-brand-400 text-ink grid place-items-center text-xl">⚡</div>
+          <h3 class="mt-4 text-2xl font-bold">Hosting SEO</h3>
+          <p class="mt-2 text-gray-300 max-w-md">Máy chủ riêng cho doanh nghiệp — web tải nhanh, không sập đúng lúc khách đông nhất. Có người trực 24/7, không để anh chị tự xoay.</p>
+          <div class="mt-5 flex flex-wrap gap-2 text-xs">
+            <span class="px-3 py-1 rounded-full bg-white/10">SSD NVMe</span>
+            <span class="px-3 py-1 rounded-full bg-white/10">LiteSpeed Cache</span>
+            <span class="px-3 py-1 rounded-full bg-white/10">Backup tự động</span>
+            <span class="px-3 py-1 rounded-full bg-white/10">Uptime 99.9%</span>
+          </div>
+          <a href="#lien-he" class="mt-6 inline-block bg-brand-400 text-ink font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-brand-300 transition">Xem chi tiết →</a>
+        </div>
+      </article>
+
+      <!-- Domain -->
+      <article class="svc reveal sm:col-span-2 bg-brand-400 rounded-3xl p-7">
+        <div class="w-11 h-11 rounded-2xl bg-ink text-brand-400 grid place-items-center text-xl">🔗</div>
+        <h3 class="mt-4 text-2xl font-bold">Tên miền</h3>
+        <p class="mt-2 text-ink/80">Địa chỉ riêng để nhớ — khách gõ là ra anh chị.</p>
+        <div class="mt-5 bg-white rounded-2xl px-4 py-3 font-semibold flex items-center justify-between">
+          <span>yourdomain<span id="tld" class="text-brand-600 transition">.com</span></span>
+          <span class="flex gap-1.5 text-xs">
+            <span class="px-2 py-1 rounded-full bg-brand-100">.com</span>
+            <span class="px-2 py-1 rounded-full bg-brand-100">.net</span>
+            <span class="px-2 py-1 rounded-full bg-brand-100">.vn</span>
+          </span>
+        </div>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">🔍</div>
+        <h3 class="mt-4 text-lg font-bold">SEO tổng thể</h3>
+        <p class="mt-2 text-sm text-gray-600">Khách tìm từ khoá là thấy anh chị ở trang đầu.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">🎯</div>
+        <h3 class="mt-4 text-lg font-bold">Quảng cáo</h3>
+        <p class="mt-2 text-sm text-gray-600">Chạy đúng người đang cần mua — Google & Facebook Ads.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">🧩</div>
+        <h3 class="mt-4 text-lg font-bold">Thiết kế phần mềm</h3>
+        <p class="mt-2 text-sm text-gray-600">Quy trình riêng chạy thẳng trên trình duyệt.</p>
+      </article>
+
+      <article class="svc reveal bg-white rounded-3xl p-6 border border-black/5">
+        <div class="svc-icon w-11 h-11 rounded-2xl bg-brand-100 grid place-items-center text-xl transition">🛡️</div>
+        <h3 class="mt-4 text-lg font-bold">Chăm sóc website</h3>
+        <p class="mt-2 text-sm text-gray-600">Cập nhật, sao lưu, vá lỗi bảo mật mỗi tháng — có báo cáo rõ ràng.</p>
+      </article>
+    </div>
+
+    <!-- More services + consult -->
+    <div class="mt-5 grid lg:grid-cols-3 gap-5">
+      <div class="reveal lg:col-span-2 bg-white rounded-3xl p-7 border border-black/5">
+        <h3 class="text-xl font-bold">Nhiều dịch vụ hơn. Nhiều giá trị hơn.</h3>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">📱 Thiết kế Mobile App</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">🏛️ Đăng ký Bộ Công Thương</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">🔗 Backlink Website</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">🎤 Tổ chức Event</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">💬 Zalo OA - Mini App</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">🚀 Traffic User</span>
+          <span class="px-4 py-2 rounded-full bg-brand-50 border border-brand-200 font-medium text-sm">🎬 Edit Video - Video AI</span>
+        </div>
+      </div>
+      <div class="reveal bg-gradient-to-br from-brand-300 to-brand-500 rounded-3xl p-7 flex flex-col">
+        <h3 class="text-xl font-bold">Không chắc mình cần gì?</h3>
+        <p class="mt-2 text-ink/80 flex-1">Nói chuyện 15 phút, chúng tôi chỉ ra đúng thứ anh chị đang thiếu — không chào bán thứ chưa cần.</p>
+        <a href="#lien-he" class="mt-5 self-start bg-ink text-white font-semibold px-6 py-3 rounded-full hover:bg-black/80 transition">Nhận tư vấn miễn phí</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS (dark, chat bubbles) ============ -->
+<section id="khach-hang" class="py-16 md:py-24 bg-ink text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-10 items-center">
+    <div class="lg:col-span-2 reveal">
+      <p class="text-gray-400">Chúng tôi có thể nói hay về mình cả ngày – nhưng điều đó không đáng tin bằng</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight"><span class="text-brand-400">Những tin nhắn</span> khách hàng gửi mỗi ngày</h2>
+      <div class="mt-8 flex items-center gap-4">
+        <div class="flex -space-x-3">
+          <span class="w-11 h-11 rounded-full bg-brand-400 text-ink grid place-items-center font-bold ring-2 ring-ink">H</span>
+          <span class="w-11 h-11 rounded-full bg-emerald-400 text-ink grid place-items-center font-bold ring-2 ring-ink">L</span>
+          <span class="w-11 h-11 rounded-full bg-sky-400 text-ink grid place-items-center font-bold ring-2 ring-ink">T</span>
+          <span class="w-11 h-11 rounded-full bg-pink-400 text-ink grid place-items-center font-bold ring-2 ring-ink">M</span>
+        </div>
+        <div>
+          <div class="text-brand-400">★★★★★</div>
+          <p class="text-sm text-gray-400">2.000+ khách hàng tin dùng</p>
+        </div>
+      </div>
+      <p class="mt-6 text-xs text-gray-500">* Nội dung tin nhắn mẫu — thay bằng ảnh chụp phản hồi thật của khách hàng anh/chị.</p>
+    </div>
+
+    <div class="lg:col-span-3 h-[460px] mask-y pause-hover grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-hidden">
+      <div class="marquee-y space-y-4" id="colA"></div>
+      <div class="marquee-y slow space-y-4 hidden sm:block" id="colB"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNER LOGOS ============ -->
+<section class="py-14 border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center reveal">
+    <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold">Niềm tin không thể tự phong</p>
+    <h2 class="mt-2 text-2xl md:text-3xl font-extrabold">Đồng hành cùng doanh nghiệp nhiều ngành nghề</h2>
+  </div>
+  <div class="mt-10 overflow-hidden mask-x pause-hover">
+    <div class="marquee flex w-max gap-12 items-center text-2xl font-extrabold text-gray-300" id="logoTrack"></div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section id="so-lieu" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="text-brand-600 font-bold uppercase tracking-widest text-sm">Số liệu ấn tượng</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">Khẳng định hiệu quả thực tế</h2>
+      <p class="mt-3 text-gray-600">Những giá trị thực tế tạo nên khác biệt cho doanh nghiệp.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal bg-brand-400 rounded-3xl p-7 flex flex-col justify-between min-h-[220px]">
+        <p class="font-semibold">Khách hàng sử dụng dịch vụ</p>
+        <p class="text-5xl md:text-6xl font-black"><span class="counter" data-to="2000">0</span>+</p>
+      </div>
+
+      <div class="reveal sm:col-span-2 bg-gray-50 border border-black/5 rounded-3xl p-7">
+        <p class="font-semibold text-lg">Dự án được thực hiện</p>
+        <p class="mt-1 text-gray-600 text-sm">Hơn 2.000+ dự án được triển khai hiệu quả, đồng hành cùng doanh nghiệp phát triển bền vững.</p>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-5">
+            <p class="text-sm text-gray-500">Chiến dịch Marketing</p>
+            <p class="text-3xl font-black mt-1"><span class="counter" data-to="850">0</span>+</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5">
+            <p class="text-sm text-gray-500">Xây dựng phần mềm</p>
+            <p class="text-3xl font-black mt-1"><span class="counter" data-to="120">0</span>+</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal bg-ink text-white rounded-3xl p-7 flex flex-col justify-between min-h-[220px]">
+        <p class="text-5xl md:text-6xl font-black text-brand-400"><span class="counter" data-to="98">0</span>%</p>
+        <p class="text-sm text-gray-300">Sự hài lòng của khách hàng là động lực để chúng tôi không ngừng phát triển.</p>
+      </div>
+
+      <div class="reveal sm:col-span-2 bg-gray-50 border border-black/5 rounded-3xl p-7 flex flex-col sm:flex-row gap-6 sm:items-end justify-between">
+        <div>
+          <p class="font-semibold text-lg">Thiết kế Website</p>
+          <p class="mt-1 text-gray-600 text-sm max-w-sm">Hơn 1.000+ website đang hoạt động, mang về khách hàng mỗi ngày cho doanh nghiệp.</p>
+        </div>
+        <p class="text-5xl font-black"><span class="counter" data-to="1000">0</span>+</p>
+      </div>
+
+      <div class="reveal sm:col-span-2 bg-gradient-to-br from-brand-100 to-brand-300 rounded-3xl p-7 flex flex-col sm:flex-row gap-6 justify-between">
+        <div>
+          <p class="text-5xl font-black"><span class="counter" data-to="4.9" data-decimals="1">0.0</span></p>
+          <p class="text-brand-600 text-lg">★★★★★</p>
+          <p class="mt-1 text-sm text-ink/80">Đánh giá trên App Store & Google Play</p>
+          <p class="mt-3 text-sm text-ink/80 max-w-xs">Dễ dàng theo dõi, quản lý mọi hợp đồng và dịch vụ đang sử dụng ngay trên điện thoại.</p>
+        </div>
+        <div class="flex sm:flex-col gap-3 self-start sm:self-end">
+          <a href="#" class="bg-ink text-white rounded-xl px-4 py-2.5 flex items-center gap-2 hover:bg-black/80">
+            <span class="text-xl"></span><span class="leading-tight text-left"><span class="block text-[10px] opacity-70">Tải ngay trên</span><span class="text-sm font-semibold">App Store</span></span>
+          </a>
+          <a href="#" class="bg-ink text-white rounded-xl px-4 py-2.5 flex items-center gap-2 hover:bg-black/80">
+            <span class="text-xl">▶</span><span class="leading-tight text-left"><span class="block text-[10px] opacity-70">Tải ngay trên</span><span class="text-sm font-semibold">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section id="kien-thuc" class="py-16 md:py-24 bg-brand-50/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 reveal">
+      <div>
+        <p class="text-brand-600 font-bold uppercase tracking-widest text-sm">Không giấu nghề</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">Kiến thức chúng tôi dùng cho khách hàng</h2>
+      </div>
+      <a href="#" class="self-start md:self-auto font-semibold border-2 border-ink px-5 py-2.5 rounded-full hover:bg-ink hover:text-white transition">Xem tất cả bài viết →</a>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="ve-chung-toi" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-start">
+    <div class="reveal lg:sticky lg:top-28">
+      <p class="text-brand-600 font-bold uppercase tracking-widest text-sm">Về chúng tôi</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">NOVA – Kiến tạo hệ sinh thái <span class="hl">marketing online</span></h2>
+      <p class="mt-5 text-gray-600 leading-relaxed">Chúng tôi không xây dựng marketing theo một công thức cố định. Mỗi doanh nghiệp cần một chiến lược riêng. Mỗi khách hàng cần một cách tiếp cận riêng. Mỗi ngân sách cần được đầu tư đúng mục tiêu.</p>
+      <p class="mt-4 text-gray-600 leading-relaxed">Từ nền tảng website đến kênh tìm kiếm, mạng xã hội và công nghệ, NOVA kết nối từng điểm chạm thành một hệ thống đồng bộ — hướng đến mục tiêu cuối cùng: <b class="text-ink">khách hàng và doanh thu</b>.</p>
+
+      <div class="mt-8 grid grid-cols-2 gap-3 text-sm">
+        <div class="rounded-2xl bg-gray-50 p-4"><b class="block">Nền tảng</b><span class="text-gray-600">Website, Hosting, Tên miền, Email</span></div>
+        <div class="rounded-2xl bg-gray-50 p-4"><b class="block">Marketing Web</b><span class="text-gray-600">Content SEO, Backlink, Google Ads</span></div>
+        <div class="rounded-2xl bg-gray-50 p-4"><b class="block">Marketing Social</b><span class="text-gray-600">Video AI, Fanpage, Maps</span></div>
+        <div class="rounded-2xl bg-gray-50 p-4"><b class="block">AI</b><span class="text-gray-600">AI Content, Chatbot, AI Agent</span></div>
+      </div>
+    </div>
+
+    <div class="reveal space-y-3" id="accordion">
+      <details class="group bg-white border border-black/10 rounded-2xl p-6 open:bg-brand-50 open:border-brand-300" open>
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">Tầm nhìn <span class="w-8 h-8 rounded-full bg-brand-400 grid place-items-center transition group-open:rotate-45">+</span></summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">Trở thành thương hiệu dẫn đầu trong lĩnh vực marketing online và chuyển đổi đơn hàng cho doanh nghiệp Việt, tiên phong kết hợp Marketing – Công nghệ – AI – Dữ liệu để tạo ra những hệ thống hiệu quả và bền vững.</p>
+      </details>
+      <details class="group bg-white border border-black/10 rounded-2xl p-6 open:bg-brand-50 open:border-brand-300">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">Sứ mệnh <span class="w-8 h-8 rounded-full bg-brand-400 grid place-items-center transition group-open:rotate-45">+</span></summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">Giúp doanh nghiệp Việt làm chủ marketing trong thời đại số — được tìm thấy, được tin tưởng, được lựa chọn và tạo ra doanh thu.</p>
+      </details>
+      <details class="group bg-white border border-black/10 rounded-2xl p-6 open:bg-brand-50 open:border-brand-300">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">Giá trị cốt lõi <span class="w-8 h-8 rounded-full bg-brand-400 grid place-items-center transition group-open:rotate-45">+</span></summary>
+        <ul class="mt-4 space-y-2 text-gray-600">
+          <li>✔️ <b class="text-ink">Khách hàng là trung tâm</b> — bắt đầu từ nhu cầu thực tế.</li>
+          <li>✔️ <b class="text-ink">Tận tâm & trách nhiệm</b> — cam kết với từng kết quả.</li>
+          <li>✔️ <b class="text-ink">Chất lượng & hiệu quả</b> — mọi thứ đều đo lường được.</li>
+          <li>✔️ <b class="text-ink">Sáng tạo & đổi mới</b> — liên tục cập nhật AI, dữ liệu.</li>
+          <li>✔️ <b class="text-ink">Đồng hành dài hạn</b> — đối tác, không chỉ nhà cung cấp.</li>
+        </ul>
+      </details>
+      <details class="group bg-white border border-black/10 rounded-2xl p-6 open:bg-brand-50 open:border-brand-300">
+        <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-lg">Văn hoá doanh nghiệp <span class="w-8 h-8 rounded-full bg-brand-400 grid place-items-center transition group-open:rotate-45">+</span></summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">Chủ động – Kỷ luật – Sáng tạo – Trách nhiệm – Cùng phát triển. Dám nghĩ, dám làm, dám chịu trách nhiệm và không ngừng học hỏi.</p>
+        <p class="mt-3 italic font-semibold">“Thành công của khách hàng chính là thành công của chúng tôi.”</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="lien-he" class="py-16 md:py-24 bg-ink text-white relative overflow-hidden">
+  <div class="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full bg-brand-400/20 blur-3xl"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Bạn đã sẵn sàng <span class="text-brand-400">hợp tác</span> cùng NOVA chưa?</h2>
+      <p class="mt-5 text-gray-300 leading-relaxed max-w-lg">Liên hệ ngay — chúng tôi sẵn sàng tư vấn, triển khai và giúp anh/chị bứt phá trên nền tảng số. Hoặc để lại thông tin, chuyên viên sẽ gọi lại trong 30 phút.</p>
+      <div class="mt-8 space-y-4">
+        <a href="tel:0900000000" class="flex items-center gap-4 group">
+          <span class="w-12 h-12 rounded-full bg-brand-400 text-ink grid place-items-center text-xl">📞</span>
+          <span><span class="block text-sm text-gray-400">Hotline 24/7</span><span class="text-xl font-bold group-hover:text-brand-400">0900 000 000</span></span>
+        </a>
+        <a href="mailto:hello@yourbrand.vn" class="flex items-center gap-4 group">
+          <span class="w-12 h-12 rounded-full bg-white/10 grid place-items-center text-xl">✉️</span>
+          <span><span class="block text-sm text-gray-400">Email</span><span class="text-lg font-semibold group-hover:text-brand-400">hello@yourbrand.vn</span></span>
+        </a>
+      </div>
+    </div>
+
+    <form id="contactForm" class="reveal bg-white text-ink rounded-3xl p-6 sm:p-8 shadow-2xl" novalidate>
+      <div class="grid grid-cols-2 bg-gray-100 rounded-full p-1 text-sm font-semibold" id="typeToggle">
+        <button type="button" data-type="khach-hang" class="rounded-full py-2.5 bg-brand-400 transition">Khách hàng</button>
+        <button type="button" data-type="doi-tac" class="rounded-full py-2.5 transition">Đối tác</button>
+      </div>
+      <div class="mt-5 grid sm:grid-cols-2 gap-4">
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Họ và tên *</span>
+          <input name="name" required class="mt-1.5 w-full rounded-xl border border-black/10 bg-gray-50 px-4 py-3 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200" placeholder="Nguyễn Văn A"></label>
+        <label class="block"><span class="text-sm font-semibold">Số điện thoại *</span>
+          <input name="phone" required type="tel" pattern="0[0-9]{9}" class="mt-1.5 w-full rounded-xl border border-black/10 bg-gray-50 px-4 py-3 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200" placeholder="09xx xxx xxx"></label>
+        <label class="block"><span class="text-sm font-semibold">Email *</span>
+          <input name="email" required type="email" class="mt-1.5 w-full rounded-xl border border-black/10 bg-gray-50 px-4 py-3 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200" placeholder="ban@congty.vn"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Chọn dịch vụ cần tư vấn</span>
+          <select name="service" class="mt-1.5 w-full rounded-xl border border-black/10 bg-gray-50 px-4 py-3 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200">
+            <option value="">— Chọn dịch vụ —</option>
+            <option>Thiết kế website</option><option>Hosting SEO</option><option>Tên miền</option><option>Chăm sóc website</option>
+            <option>Backlink Website</option><option>Ads Google, Facebook</option><option>SEO tổng thể</option><option>Traffic User</option>
+            <option>Profile doanh nghiệp</option><option>Phần mềm nội bộ</option><option>Thiết kế App</option><option>Email doanh nghiệp</option>
+            <option>Tổ chức sự kiện</option><option>Edit Video - Video AI</option><option>Chăm sóc Fanpage</option><option>Zalo OA - Mini App</option><option>Google Maps</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold flex justify-between">Lời nhắn <span id="msgCount" class="font-normal text-gray-400">0/200</span></span>
+          <textarea name="message" maxlength="200" rows="3" class="mt-1.5 w-full rounded-xl border border-black/10 bg-gray-50 px-4 py-3 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 resize-none" placeholder="Anh/chị đang cần giải quyết vấn đề gì?"></textarea></label>
+      </div>
+      <p id="formError" class="mt-3 text-sm text-red-600 hidden"></p>
+      <button class="mt-5 w-full bg-brand-400 hover:bg-brand-500 font-bold py-4 rounded-full transition shadow-[0_10px_30px_-10px_rgba(245,192,0,.9)]">Gửi thông tin đăng ký ngay</button>
+      <p class="mt-3 text-xs text-gray-500 text-center">Thông tin của anh/chị được bảo mật tuyệt đối.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-black text-gray-400 pt-14 pb-24 md:pb-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+    <div>
+      <a href="#" class="flex items-center gap-2 font-extrabold text-xl text-white">
+        <span class="w-9 h-9 rounded-full bg-brand-400 grid place-items-center text-ink font-black">N</span>NOVA<span class="text-brand-400">digital</span>
+      </a>
+      <p class="mt-4 leading-relaxed">Marketing tạo chuyển đổi — Tăng trưởng tạo giá trị.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Dịch vụ</h4>
+      <ul class="space-y-2"><li><a href="#dich-vu" class="hover:text-brand-400">Thiết kế website</a></li><li><a href="#dich-vu" class="hover:text-brand-400">Hosting SEO</a></li><li><a href="#dich-vu" class="hover:text-brand-400">SEO tổng thể</a></li><li><a href="#dich-vu" class="hover:text-brand-400">Quảng cáo</a></li></ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Công ty</h4>
+      <ul class="space-y-2"><li><a href="#ve-chung-toi" class="hover:text-brand-400">Về chúng tôi</a></li><li><a href="#kien-thuc" class="hover:text-brand-400">Kiến thức</a></li><li><a href="#lien-he" class="hover:text-brand-400">Liên hệ</a></li><li><a href="#" class="hover:text-brand-400">Chính sách bảo mật</a></li></ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-4">Liên hệ</h4>
+      <ul class="space-y-2"><li>📍 Địa chỉ công ty của anh/chị</li><li>📞 0900 000 000</li><li>✉️ hello@yourbrand.vn</li></ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 pt-6 border-t border-white/10 text-xs flex flex-col sm:flex-row justify-between gap-2">
+    <span>© 2026 NOVA Digital. All rights reserved.</span>
+    <span>Built with AI Landing Engine Kit</span>
+  </div>
+</footer>
+
+<!-- Floating hotline -->
+<a href="tel:0900000000" class="fixed bottom-4 right-4 z-40 flex items-center gap-3 bg-brand-400 hover:bg-brand-500 rounded-full pl-2 pr-5 py-2 shadow-[0_12px_30px_-8px_rgba(0,0,0,.35)] transition">
+  <span class="relative w-10 h-10 rounded-full bg-ink text-brand-400 grid place-items-center">
+    <span class="absolute inset-0 rounded-full bg-ink animate-ping opacity-30"></span>📞
+  </span>
+  <span class="leading-tight"><span class="block text-[11px] font-medium">Hotline 24/7</span><span class="font-extrabold">0900 000 000</span></span>
+</a>
+<button id="toTop" class="fixed bottom-20 right-5 z-40 w-11 h-11 rounded-full bg-ink text-white grid place-items-center shadow-lg opacity-0 pointer-events-none transition" aria-label="Lên đầu trang">↑</button>
+
+<script>
+  // ---------- Header shadow on scroll + back-to-top ----------
+  const header = document.getElementById('header');
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('bg-white/90', y > 10);
+    header.classList.toggle('backdrop-blur', y > 10);
+    header.classList.toggle('shadow-sm', y > 10);
+    toTop.classList.toggle('opacity-0', y < 600);
+    toTop.classList.toggle('pointer-events-none', y < 600);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0 }));
+
+  // ---------- Mobile menu ----------
+  const mobileMenu = document.getElementById('mobileMenu');
+  document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // ---------- Rotating words ----------
+  const words = document.querySelectorAll('#rotator span');
+  let wi = 0;
+  setInterval(() => {
+    words[wi].classList.remove('active');
+    wi = (wi + 1) % words.length;
+    words[wi].classList.add('active');
+  }, 2200);
+
+  // ---------- Domain TLD rotation ----------
+  const tlds = ['.com', '.net', '.vn', '.com.vn'];
+  let ti = 0;
+  setInterval(() => { ti = (ti + 1) % tlds.length; document.getElementById('tld').textContent = tlds[ti]; }, 1800);
+
+  // ---------- Domain lookup (demo) ----------
+  document.getElementById('domainForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = document.getElementById('domainInput').value.trim().toLowerCase();
+    const out = document.getElementById('domainResult');
+    if (!/^[a-z0-9-]+(\.[a-z.]{2,})?$/.test(v)) {
+      out.className = 'mt-3 ml-5 text-sm min-h-[20px] text-red-600';
+      out.textContent = 'Vui lòng nhập tên miền hợp lệ, ví dụ: tencongty.vn';
+      return;
+    }
+    const d = v.includes('.') ? v : v + '.vn';
+    out.className = 'mt-3 ml-5 text-sm min-h-[20px] text-gray-700';
+    out.innerHTML = `🔎 Đang kiểm tra <b>${d}</b>… Để lại thông tin bên dưới, chúng tôi sẽ giữ tên miền cho anh/chị. <a href="#lien-he" class="underline font-semibold">Đăng ký ngay</a>`;
+  });
+
+  // ---------- Testimonial chat bubbles (sample content) ----------
+  const chats = [
+    { n: 'Chị Hạnh — Spa', c: 'bg-pink-400', m: ['Web mới lên được 2 tuần mà đã có 14 khách đặt lịch qua form rồi em ơi 😍', 'Cảm ơn team nhiều nha!'] },
+    { n: 'Anh Long — Nội thất', c: 'bg-emerald-400', m: ['Từ khoá "sofa gỗ HCM" lên top 3 rồi', 'Tháng này đơn từ web gấp đôi tháng trước 👍'] },
+    { n: 'Chị Trang — Mỹ phẩm', c: 'bg-sky-400', m: ['Hosting chạy mượt lắm, hôm flash sale đông mà không sập', 'Bên em yên tâm hẳn'] },
+    { n: 'Anh Minh — Cơ khí', c: 'bg-brand-400', m: ['Profile công ty in ra đẹp quá, đối tác Nhật khen 👌'] },
+    { n: 'Chị Lan — F&B', c: 'bg-orange-400', m: ['Lên Google Maps xong khách tìm tới quán nhiều hơn hẳn', 'Review 4.9 sao rồi nè'] },
+    { n: 'Anh Tuấn — Logistics', c: 'bg-violet-400', m: ['Phần mềm quản lý đơn chạy ổn định', 'Nhân viên dùng quen sau 1 buổi 😄'] },
+    { n: 'Chị Ngọc — Giáo dục', c: 'bg-teal-400', m: ['Chatbot AI trả lời phụ huynh 24/7, đỡ cho bên chị quá trời'] },
+    { n: 'Anh Phát — BĐS', c: 'bg-rose-400', m: ['Chạy ads đúng tệp, chi phí/lead giảm 40% so với trước'] },
+  ];
+  const chatCard = ({ n, c, m }) => `
+    <div class="bg-white/[.06] border border-white/10 rounded-2xl p-4">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="w-8 h-8 rounded-full ${c} text-ink grid place-items-center text-sm font-bold">${n.split(' ')[1][0]}</span>
+        <span class="text-sm font-semibold">${n}</span>
+      </div>
+      ${m.map(t => `<p class="bg-white text-ink text-sm rounded-2xl rounded-tl-sm px-3 py-2 mb-2 w-fit max-w-full">${t}</p>`).join('')}
+      <p class="mt-1 bg-brand-400 text-ink text-sm rounded-2xl rounded-tr-sm px-3 py-2 ml-auto w-fit">Dạ team cảm ơn ${n.split(' ')[0].toLowerCase()} ạ ❤️</p>
+    </div>`;
+  const half = Math.ceil(chats.length / 2);
+  const colA = chats.slice(0, half).map(chatCard).join('');
+  const colB = chats.slice(half).map(chatCard).join('');
+  document.getElementById('colA').innerHTML = colA + colA;
+  document.getElementById('colB').innerHTML = colB + colB;
+
+  // ---------- Partner logos (placeholder names) ----------
+  const logos = ['AURORA', 'Greenfield', 'MINH PHÁT', 'Lotus Spa', 'TechViet', 'SAO MAI', 'Bamboo Co.', 'HOÀNG GIA', 'Oceanic', 'An Khang'];
+  const logoHTML = logos.map(l => `<span class="whitespace-nowrap hover:text-ink transition">${l}</span>`).join('');
+  document.getElementById('logoTrack').innerHTML = logoHTML + logoHTML;
+
+  // ---------- Blog ----------
+  const posts = [
+    { d: '17/10/2026', t: 'Thiết kế website công ty chuẩn SEO tăng chuyển đổi', s: 'Tối ưu cấu trúc ngay từ đầu giúp website lên Google nhanh hơn và biến traffic thành khách hàng.', e: '🖥️' },
+    { d: '16/10/2026', t: 'Khi nào doanh nghiệp nên làm website bằng Laravel?', s: 'Mở rộng hệ thống, tích hợp AI, phần mềm và app — những điểm cần cân nhắc trước khi chọn công nghệ.', e: '⚙️' },
+    { d: '15/10/2026', t: 'AI phát triển mạnh, hosting chất lượng cao lên ngôi', s: 'LiteSpeed, SSD NVMe và sao lưu tự động: vì sao hạ tầng quyết định thứ hạng SEO.', e: '⚡' },
+    { d: '14/10/2026', t: '5 sai lầm khiến website “đẹp nhưng không ra đơn”', s: 'Thiếu CTA, tải chậm, nội dung chung chung… và cách khắc phục trong một tuần.', e: '🚫' },
+    { d: '12/10/2026', t: 'Chăm sóc website: chi phí nhỏ, giữ doanh thu lớn', s: 'Cập nhật nội dung, duy trì tốc độ, vá bảo mật — checklist hàng tháng cho chủ doanh nghiệp.', e: '🛡️' },
+    { d: '09/10/2026', t: 'SEO Google Maps: tiếp cận khách hàng địa phương', s: 'Tối ưu hồ sơ doanh nghiệp, thu review và xuất hiện trong top 3 bản đồ khu vực.', e: '📍' },
+  ];
+  document.getElementById('blogGrid').innerHTML = posts.map(p => `
+    <article class="reveal group bg-white rounded-3xl overflow-hidden border border-black/5 hover:shadow-xl transition">
+      <div class="aspect-[16/9] bg-gradient-to-br from-brand-200 to-brand-400 grid place-items-center text-6xl group-hover:scale-105 transition duration-500">${p.e}</div>
+      <div class="p-6">
+        <p class="text-xs text-gray-500 font-medium">${p.d}</p>
+        <h3 class="mt-2 font-bold text-lg leading-snug group-hover:text-brand-600 transition">${p.t}</h3>
+        <p class="mt-2 text-sm text-gray-600 line-clamp-2">${p.s}</p>
+        <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold">Đọc thêm <span class="group-hover:translate-x-1 transition">→</span></a>
+      </div>
+    </article>`).join('');
+
+  // ---------- Reveal on scroll ----------
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---------- Counters ----------
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, to = parseFloat(el.dataset.to), dec = +el.dataset.decimals || 0;
+      const start = performance.now(), dur = 1600;
+      const tick = now => {
+        const p = Math.min((now - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (to * eased).toLocaleString('vi-VN', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+
+  // ---------- Contact form ----------
+  let contactType = 'khach-hang';
+  document.querySelectorAll('#typeToggle button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#typeToggle button').forEach(x => x.classList.remove('bg-brand-400'));
+    b.classList.add('bg-brand-400');
+    contactType = b.dataset.type;
+  }));
+  const form = document.getElementById('contactForm');
+  const msg = form.querySelector('[name=message]');
+  msg.addEventListener('input', () => document.getElementById('msgCount').textContent = `${msg.value.length}/200`);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const err = document.getElementById('formError');
+    const f = form.elements;
+    const name = f['name'].value.trim(), phone = f['phone'].value.replace(/\s/g, ''), email = f['email'].value.trim();
+    let problem = '';
+    if (!name) problem = 'Vui lòng nhập họ và tên.';
+    else if (!/^0\d{9}$/.test(phone)) problem = 'Số điện thoại cần gồm 10 số, bắt đầu bằng 0.';
+    else if (!/^\S+@\S+\.\S+$/.test(email)) problem = 'Email chưa đúng định dạng.';
+    if (problem) { err.textContent = problem; err.classList.remove('hidden'); return; }
+    err.classList.add('hidden');
+    // TODO: gửi dữ liệu về Google Sheet / Telegram (xem /kit-notify)
+    console.log({ type: contactType, name, phone, email, service: f['service'].value, message: msg.value });
+    form.innerHTML = `
+      <div class="text-center py-10">
+        <div class="w-16 h-16 mx-auto rounded-full bg-brand-400 grid place-items-center text-3xl">✓</div>
+        <h3 class="mt-5 text-2xl font-extrabold">Cảm ơn ${name}!</h3>
+        <p class="mt-2 text-gray-600">Chuyên viên sẽ liên hệ anh/chị qua số ${phone} trong vòng 30 phút.</p>
+      </div>`;
+  });
+</script>
+</body>
+</html>
